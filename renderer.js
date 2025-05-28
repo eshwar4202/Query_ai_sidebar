@@ -9,7 +9,7 @@ import { GoogleGenerativeAI } from "https://esm.sh/@google/generative-ai";
 const ai = new GoogleGenerativeAI(window.env.API_KEY);
 async function main(promptText) {
   const model = ai.getGenerativeModel({ model: "gemini-1.5-flash" });
-  const result = await model.generateContent(promptText);
+  const result = await model.generateContent("*this is a compact side window in a laptop therefore keep your response for the prompt consise. the prompt:*" + promptText);
   const response = await result.response;
   const text = await response.text();
   return text;
